@@ -1,0 +1,70 @@
+.button--primary {
+    background-color: $primary;
+    color: white;
+    border-radius: 15px;
+    border: 0;
+}
+
+
+// .google-btn {
+//     cursor: pointer;
+//     margin-top: 5px;
+//     width: 280px;
+//     height: 42px;
+//     background-color: #4285f4;
+//     border-radius: 8px;
+//     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+//     transition: box-shadow .3s ease;
+
+//     .google-icon-wrapper {
+//         position: absolute;
+//         margin-top: 1px;
+//         margin-left: 1px;
+//         width: 40px;
+//         height: 40px;
+//         border-radius: 2px;
+//         background-color: $white;
+//         border-radius: 8px;
+//     }
+//     .google-icon {
+//         position: absolute;
+//         margin-top: 11px;
+//         margin-left: 11px;
+//         width: 18px;
+//         height: 18px;
+//     }
+//     .btn-text {
+//         float: right;
+//         margin: 11px 65px 0 0;
+//         color: $white;
+//         font-size: 14px;
+//         letter-spacing: 0.2px;
+//     }
+//     &:hover {
+//         box-shadow: 0 0 6px #4285f4;
+//     }
+//     &:active {
+//         background: #1669f2;
+//     }
+// }
+
+.google-btn {
+    display: flex;
+    width: 290px;
+    border: 2px solid $borderA;
+    border-radius: 15px;
+    justify-content: center;
+    padding: 3px;
+
+    .google-icon-wrapper {
+        margin-right: 10px;
+    }
+
+    &:hover {
+        box-shadow: 0 0 6px $primary;
+    }
+
+    &:active {
+        background: $primary;
+    }
+}
