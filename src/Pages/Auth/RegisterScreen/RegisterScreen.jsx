@@ -3,11 +3,15 @@ import {Link} from 'react-router-dom'
 
 const RegisterScreen = () => {
 
+
+  
+
+
   return (
-    <section className='loginScreen flex-center' >
-      <img src="/Images/logo.svg" alt="logo" className='loginScreen__logo' />
-      <h2 className='loginScreen__title' >
-        Create your account
+    <section className='mainAuthScreen flex-center' >
+      <img src="/Images/logo.svg" alt="logo" className='mainAuthScreen__logo' />
+      <h2 className='mainAuthScreen__title' >
+        Join Twitter today
       </h2>
 
       <form className='form flex-center' >
@@ -37,8 +41,8 @@ const RegisterScreen = () => {
         </p>
       </div>
 
-      <Link to="/auth/login">
-        Create new account
+      <Link to="/auth/login" className='mainAuthScreen__link' >
+        Have an account already? <span className='mainAuthScreen__link--color' >Log in</span>
       </Link>
     </section>
   )

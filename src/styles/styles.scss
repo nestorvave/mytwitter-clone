@@ -1,7 +1,17 @@
+
 @import './base/settings';
 @import './base/base';
 
 
 @import './components/buttons';
 
-@import '../Pages/Auth/LoginScreen/LoginScreen'
+
+
+@import '../Pages/Auth/AuthScreen';
+@import "../Pages/Home/HomeScreen/HomeScreen";
+@import "../Pages/Home/Tweet/Tweet";
+@import "../Pages/Home/NewTweet/NewTweet";
+@import "../Pages/Home/Feed/Feed";
+
+
+

@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 
 const LoginScreen = () => {
   return (
-    <section className='loginScreen flex-center' >
-      <img src="/Images/logo.svg" alt="logo" className='loginScreen__logo' />
-      <h2 className='loginScreen__title' >
+    <section className='mainAuthScreen flex-center' >
+      <img src="/Images/logo.svg" alt="logo" className='mainAuthScreen__logo' />
+      <h2 className='mainAuthScreen__title' >
         See what´s happening in the world right now.
       </h2>
 
@@ -36,12 +36,9 @@ const LoginScreen = () => {
             <span>Login with google</span>
         </p>
       </div>
-      <Link 
-              to="/auth/register"
-
-            >
-              Already registered?
-            </Link>
+      <Link to="/auth/register" className='mainAuthScreen__link' >
+        Already registered?
+      </Link>
       
     </section>
   )

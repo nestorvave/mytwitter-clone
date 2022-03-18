@@ -1,0 +1,16 @@
+.btn-tweet{
+    background-color: $primary;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 8vh;
+    right: 5vw;
+    position: fixed;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+
+}

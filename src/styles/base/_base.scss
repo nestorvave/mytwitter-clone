@@ -18,3 +18,14 @@
     justify-content: center;
     flex-direction: column;
 }
+.homePage{
+    width: 100%;
+    
+}
+
+@media (min-width: 650px) { 
+    .authScreen{
+        background-color: $bg-auth;
+    }
+
+}

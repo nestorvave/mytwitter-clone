@@ -1,0 +1,80 @@
+.mainAuthScreen{
+    width: 290px;
+    height: 380px;
+    padding: 10px;
+    justify-content: space-evenly ;
+    border-radius: 6px;
+    border: 1px solid $borderA;
+    
+    .mainAuthScreen__logo{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 92%;
+    
+    }
+    
+
+    .mainAuthScreen__title{
+        text-align: center;
+    }
+ 
+
+    .form{
+        width: 280px;
+        height: 160px;
+   
+        .form__input{
+            border: 0;
+            border-bottom: 1px solid $borderA;
+            width: 100%;
+            height: 30px;
+            margin: 10px 0 10px 0;
+        }
+        .form__button{
+            width: 280px;
+            height: 35px;
+            &:hover{
+                box-shadow: 0 0 6px $primary;
+            }
+            
+        }
+    }
+    .mainAuthScreen__link{
+        text-decoration: none;
+        color: black;
+        &:hover{
+            border-bottom: 1px solid $primary;
+        }
+        .mainAuthScreen__link--color{
+            color: $primary;
+
+        }
+    }
+
+}
+
+
+
+//Desktop Design
+
+@media (min-width: 650px) { 
+    .mainAuthScreen{
+        height: 450px;
+        background-color: white;
+
+        .mainAuthScreen__logo{
+            width: 50px;
+            height: 50px;
+            position: static;
+            bottom: 92%;
+        
+        }
+        
+    
+    
+    }
+    
+    
+
+ }

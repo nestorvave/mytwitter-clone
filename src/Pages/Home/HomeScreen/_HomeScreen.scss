@@ -1,0 +1,23 @@
+.mainHomeScreen{
+    width: 100%;
+    
+    .navHomeScreen{
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid $borderA;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0 2px 0;
+
+        .navHomeScreen__profilePicture{
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+        }
+        .navHomeScreen__logo{
+            width: 40px;
+            height: 40px;
+        }
+        
+    }
+}

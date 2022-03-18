@@ -5,24 +5,29 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import LoginScreen from '../Pages/Auth/LoginScreen/LoginScreen';
 import HomeScreen from '../Pages/Home/HomeScreen/HomeScreen';
+import NewTweet from '../Pages/Home/NewTweet/NewTweet';
 import AuthRouter from './AuthRouter';
 
 const AppRouter = () => {
   return (
     <Router>
-      <div>
+      <div className='homePage' >
         <Switch>
           <Route
-            exact
-            path='/'
+            path='/home'
             component={ HomeScreen } 
           />
            <Route
             path='/auth'
             component={ AuthRouter } 
           />
+          <Route 
+            path="/create"
+            component={ NewTweet }
+          />
+
+
            {/* <Redirect to="/auth"/> */}
         </Switch>
       </div>
