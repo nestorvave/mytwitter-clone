@@ -5,9 +5,8 @@ const useForm = (initialState={}) => {
     const [values,setValues]  = useState(initialState);
 
     function handleForm( { target } ) {
-
         setValues({
-            ...setValues,
+            ...values,
             [target.name]: target.value
         })
         
@@ -15,6 +14,7 @@ const useForm = (initialState={}) => {
 
     
 
-  return [values,setValues,handleForm]
+  return [values,handleForm]
    
 }
+export default useForm;
