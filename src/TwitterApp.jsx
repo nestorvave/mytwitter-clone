@@ -1,8 +1,13 @@
-import React from 'react'
-import AppRouter from './Routers/AppRouter'
-import './styles/styles.scss'
+import React from "react";
+import AppRouter from "./Routers/AppRouter";
+import "./styles/styles.scss";
+import { DataProvider } from './Context/DataProvider'
 const TwitterApp = () => {
-  return <AppRouter />
-}
+  return (
+    <DataProvider>
+      <AppRouter />
+    </DataProvider>
+  );
+};
 
-export default TwitterApp
+export default TwitterApp;

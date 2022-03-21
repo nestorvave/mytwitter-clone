@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +11,7 @@ import NewTweet from '../Pages/Home/NewTweet/NewTweet';
 import AuthRouter from './AuthRouter';
 import firebase from '../Firebase/firebase'
 import { useState } from 'react';
+import { DataContext  } from '../Context/DataProvider';
 
 
 
@@ -19,14 +20,24 @@ const AppRouter = () => {
 
   const [loading, setLoading] = useState( true )
   const [status, setStatus] = useState( false )
+  const { user, setUser } = useContext( DataContext)
  
 
   useEffect(()=>{
-    firebase.auth().onAuthStateChanged( user =>{
-      if ( user!== null ){
+    firebase.auth().onAuthStateChanged( userStatus =>{
+      if ( userStatus!== null ){
         setStatus(true)
+        setUser({
+          ...user,
+          uid:userStatus.uid,
+          email:userStatus.email,
+          user:userStatus.displayName
+
+        })
+        
+
       }
-      console.log(user)
+
     })
     setLoading(false)
     
