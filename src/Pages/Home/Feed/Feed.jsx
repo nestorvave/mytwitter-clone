@@ -12,10 +12,12 @@ const Feed = () => {
   const getTweets = useGetTweets()
 
   useEffect(()=>{
-
     setUiTweets( getTweets )
-
   },[getTweets, setUiTweets])
+
+  
+
+
 
     
   return (
