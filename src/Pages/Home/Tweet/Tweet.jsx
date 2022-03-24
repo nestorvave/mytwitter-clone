@@ -13,7 +13,7 @@ const Tweet = ({
     id
     
 }) => {
-    const {uiTweets, setUiTweets, bookmarks, setBookmarks}=useContext( DataContext )
+    const {uiTweets, bookmarks, setBookmarks}=useContext( DataContext )
     
     
     
@@ -36,6 +36,7 @@ const Tweet = ({
                 db.doc(`tweets/${docId}`).update({likes:likes-1})
                 arrayFiltered = uiTweets.filter(item => item.id === docId)
                 setBookmarks(bookmarks.filter(item => item.id !== docId))
+
             }
         }        
     }
