@@ -12,20 +12,24 @@ const Feed = () => {
   const getTweets = useGetTweets()
 
   useEffect(()=>{
+
     setUiTweets( getTweets )
-  },[getTweets])
-  console.log(uiTweets)
-  console.log(getTweets)
+
+  },[getTweets, setUiTweets])
+
     
   return (
     <>
         {
             uiTweets.map( item => (
                <Tweet 
-                  tweet={item.tweet}
-                  user={item.user}
-                  email={item.email}
-                  likes={item.likes}
+                  key={ item.id }
+                  id={ item.id }
+                  tweet={ item.tweet }
+                  user={ item.user }
+                  email={ item.email }
+                  likes={ item.likes }
+                  profilePhoto={ item.profilePhoto }
                /> 
             ))
         }

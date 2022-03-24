@@ -6,7 +6,7 @@ const useGetTweets = () => {
     const [gettingTweets, setGettingTweets] = useState([])
 
     useEffect(()=>{
-        db.collection("tweets")
+        const unsuscribe=db.collection("tweets")
             .onSnapshot ( snapshot =>{
                 const tweets=[]
                 snapshot.forEach(element => {
@@ -16,7 +16,9 @@ const useGetTweets = () => {
                         user:element.data().user,
                         email:element.data().email,
                         uid:element.data().uid,
-                        likes:element.data().likes
+                        likes:element.data().likes,
+                        profilePhoto:element.data().profilePhoto,
+                        id:element.id
                     }
                     tweets.push( uiInfo)
 
@@ -28,7 +30,7 @@ const useGetTweets = () => {
 
             } )
             
-
+        return unsuscribe
 
     },[] )
 

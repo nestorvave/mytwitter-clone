@@ -25,13 +25,15 @@ const AppRouter = () => {
 
   useEffect(()=>{
     firebase.auth().onAuthStateChanged( userStatus =>{
+
       if ( userStatus!== null ){
         setStatus(true)
         setUser({
           ...user,
           uid:userStatus.uid,
           email:userStatus.email,
-          user:userStatus.displayName
+          user:userStatus.displayName,
+          profilePhoto:userStatus.photoURL
 
         })
         
@@ -41,7 +43,7 @@ const AppRouter = () => {
     })
     setLoading(false)
     
-  },[setStatus,setLoading])
+  },[setStatus, setLoading])
 
   if(loading){
     return(

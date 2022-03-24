@@ -10,20 +10,22 @@ const useUpdateDb = ( uiTweets, setUiTweets, newTweetByUser ) => {
         .catch((err) => {
             console.warn("Error adding document: ", err);
         })
-    getDocument.then( doc =>{
-        console.log(doc.data() )
-        const newTweet = {
-            tweet:doc.data().tweet,
-            id:doc.id,
-            likes:doc.data().likes
-        }
-        setUiTweets([
-            ...uiTweets,
-            newTweet
-        ])
-        console.log("added")
+    // getDocument.then( doc =>{
+    //     console.log(doc.data() )
+    //     const newTweet = {
+    //         tweet:doc.data().tweet,
+    //         id:doc.data().uid,
+    //         likes:doc.data().likes,
+        
+            
+    //     }
+    //     setUiTweets([
+    //         ...uiTweets,
+    //         newTweet
+    //     ])
+    //     console.log(uiTweets)
 
-    })
+    // })
 
 
   return uiTweets

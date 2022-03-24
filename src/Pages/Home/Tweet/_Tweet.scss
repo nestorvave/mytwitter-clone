@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     border: 1px solid $borderA;
     padding: 5px;
+    height: auto;
 
 
 
@@ -29,6 +30,11 @@
         .about__story{
             font-size: 10px;
             font-weight: 400;
+            width: 95%;
+            height: auto;
+            word-break: break-all;
+            white-space: normal;
+            padding-bottom: 2px;
         }
 
 
@@ -46,6 +52,7 @@
             align-items: center;
             width: 30px;
             height: 100%;
+            cursor: pointer;
             img{
                 width: 16px;
                 height: 16px;

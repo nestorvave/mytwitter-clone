@@ -12,6 +12,7 @@ export const DataProvider = ( {children} ) =>{
         email:"",
         user:""
     })
+    const[bookmarks, setBookmarks]=useState([])
 
 
     return(
@@ -20,7 +21,9 @@ export const DataProvider = ( {children} ) =>{
                 uiTweets,
                 setUiTweets,
                 user,
-                setUser
+                setUser,
+                bookmarks, 
+                setBookmarks
             }}
         >
             { children }

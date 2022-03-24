@@ -3,12 +3,15 @@ import useUpdateDb from '../../../Helpers/useUpdateDb'
 import { useContext } from 'react'
 import { DataContext } from '../../../Context/DataProvider'
 import useForm from '../../../Hooks/useForm'
+import { useHistory } from "react-router-dom";
 
 
 const NewTweet = () => {
     const { uiTweets, setUiTweets,user } = useContext( DataContext )
     const[values,handleForm,setValues]=useForm({newTweet:""})
     const {newTweet}= values
+    const history = useHistory()
+
 
      function AddingTweet(e) {
          e.preventDefault()
@@ -20,15 +23,23 @@ const NewTweet = () => {
          console.log(newTweetByUser)
          setValues({newTweet:""})
          useUpdateDb(uiTweets, setUiTweets, newTweetByUser)
-       
-        
+         history.push("home/feed")
+
+    
+    }
+
+    function cancelTweet() {
+        history.push("home/feed")
     }
 
 
   return (
     <main className='tweet-section flex-center' >
         <nav className='tweet-nav' >
-            <button className='tweet-nav__button tweet-nav__button--cancel'>
+            <button 
+                className='tweet-nav__button tweet-nav__button--cancel'
+                onClick={ cancelTweet }
+            >
                 Cancel
             </button>
              <button 
