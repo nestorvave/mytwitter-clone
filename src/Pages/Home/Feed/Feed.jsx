@@ -6,17 +6,28 @@ import { useContext } from 'react'
 import { DataContext } from '../../../Context/DataProvider'
 import { useEffect } from 'react'
 
+
+
+export function getStorageValue(defaultValue=[]) {
+  const saved = localStorage.getItem("bookmarks");
+  const initial = JSON.parse(saved);
+  return initial || defaultValue;
+}
+
 const Feed = () => {
 
-  const { uiTweets, setUiTweets } = useContext( DataContext );
+  const { uiTweets, setUiTweets,setBookmarks } = useContext( DataContext );
   const getTweets = useGetTweets()
 
+  //get tweets to Display on UI
   useEffect(()=>{
     setUiTweets( getTweets )
   },[getTweets, setUiTweets])
 
-  
-
+  //Get Localstorage after first render
+  useEffect(() => {
+    setBookmarks( getStorageValue )
+  }, [setBookmarks])
 
 
     
@@ -32,10 +43,11 @@ const Feed = () => {
                   email={ item.email }
                   likes={ item.likes }
                   profilePhoto={ item.profilePhoto }
+               
                /> 
             ))
         }
-      <Link to="/create" className='btn-tweet'></Link>
+      <Link to="/create" className='btn-tweet'>+</Link>
     </>
   )
 }

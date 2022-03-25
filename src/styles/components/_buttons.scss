@@ -4,7 +4,25 @@
     border-radius: 15px;
     border: 0;
 }
+.btn-tweet{
+    background-color: $primary;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 8vh;
+    right: 5vw;
+    position: fixed;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
 
+    &:hover{
+        transform: scale(1.1);
+    }
+
+}
 
 // .google-btn {
 //     cursor: pointer;
