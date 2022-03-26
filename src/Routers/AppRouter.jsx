@@ -75,7 +75,7 @@ const AppRouter = () => {
           />
 
 
-           {/* <Redirect to={(status && loading===false )  ? '/home/feed':'/auth/register'}/> */}
+           <Redirect to={(status && loading===false )  ? '/home/feed':'/auth/register'}/>
         </Switch>
       </div>
     </Router>

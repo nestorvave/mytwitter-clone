@@ -31,20 +31,21 @@ const Tweet = ({
      * @param {*which is received by map fn of each item} likes
      * @param {*which is received by map fn of each item, id of each tweet} docId
      */
-    function handleLike(likes,docId) {
+    function handleLike(like,docId) {
         if (bookmarks.length===0) {
-            db.doc(`tweets/${docId}`).update({likes:likes+1})
+            db.doc(`tweets/${docId}`).update({likes:like+1})
             arrayFiltered = uiTweets.filter(item => item.id === docId)
             setBookmarks([...bookmarks,arrayFiltered[0]])
            
         } else if (bookmarks.length>0) {
             let flag = bookmarks.some( book => docId=== book.id)
             if(flag===false) {
-                db.doc(`tweets/${docId}`).update({likes:likes+1})
+                db.doc(`tweets/${docId}`).update({likes:like+1})
                 arrayFiltered = uiTweets.filter(item => item.id === docId)
+                arrayFiltered[0]={...arrayFiltered[0],likes:like+1}
                 setBookmarks([...bookmarks,arrayFiltered[0]])
             }else{
-                db.doc(`tweets/${docId}`).update({likes:likes-1})
+                db.doc(`tweets/${docId}`).update({likes:like-1})
                 arrayFiltered = uiTweets.filter(item => item.id === docId)
                 setBookmarks(bookmarks.filter(item => item.id !== docId))
 

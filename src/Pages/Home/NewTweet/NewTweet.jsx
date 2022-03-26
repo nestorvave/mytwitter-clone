@@ -51,7 +51,7 @@ const NewTweet = () => {
         </nav>
         <section className='text-area-section '>
             <div className='profile' >
-                <img src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/17/13/1490989105-twitter1.jpg?resize=480:*" alt=""  />
+                <img src={user.profilePhoto} alt=""  />
             </div>
             <textarea 
                 name='newTweet'

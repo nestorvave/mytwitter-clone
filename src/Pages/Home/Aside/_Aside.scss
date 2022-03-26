@@ -1,0 +1,70 @@
+.aside {
+    width: 50%;
+    position: absolute;
+    height: 100vh;
+    border: 1px solid $borderA;
+    top: 0;
+    left: 0;
+    font-weight: 400;
+    background-color: white;
+    position: fixed;
+
+    .asideInfo {
+        width: 100%;
+        height: 170px;
+        padding: 5px;
+
+        .asideInfo__profilePicture {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: $borderA;
+
+        }
+
+    }
+
+    .list {
+        height: 300px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .list--link {
+            height: 70px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 8px;
+            text-decoration: none;
+            color: black;
+            &:hover {
+               border-bottom: 1px solid $borderA;
+
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+
+        }
+
+    }
+}
+.desktop {
+    display: none;
+ 
+}
+
+@media (min-width: 700px) { 
+   .desktop{
+       display: block;
+      
+       
+   }
+   .aside{
+       position: static;
+   }
+ }

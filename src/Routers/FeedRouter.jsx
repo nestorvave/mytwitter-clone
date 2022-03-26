@@ -18,7 +18,7 @@ const FeedRouter = () => {
     />
 
 
-    {/* <Redirect to="/home/feed" /> */}
+    <Redirect to="/home/feed" />
     </Switch>
     </>
   )
