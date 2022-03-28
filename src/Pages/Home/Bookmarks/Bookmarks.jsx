@@ -7,6 +7,7 @@ import Tweet from '../Tweet/Tweet'
 const Bookmarks = () => {
 
   const { bookmarks, setBookmarks }=useContext( DataContext )
+  
   useEffect(() => {
     setBookmarks( getStorageValue )
   }, [setBookmarks])

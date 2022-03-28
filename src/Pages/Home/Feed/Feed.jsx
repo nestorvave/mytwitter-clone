@@ -39,10 +39,11 @@ const Feed = () => {
                   key={ item.id }
                   id={ item.id }
                   tweet={ item.tweet }
-                  user={ item.user }
+                  userTwitter={ item.user }
                   email={ item.email }
                   likes={ item.likes }
                   profilePhoto={ item.profilePhoto }
+                  uid={ item.uid }
                
                /> 
             ))
