@@ -38,8 +38,9 @@
             padding-left: 8px;
             text-decoration: none;
             color: black;
+
             &:hover {
-               border-bottom: 1px solid $borderA;
+                border-bottom: 1px solid $borderA;
 
             }
 
@@ -53,18 +54,27 @@
 
     }
 }
-.desktop {
+
+.desktop--aside {
     display: none;
- 
+
+
 }
 
-@media (min-width: 700px) { 
-   .desktop{
-       display: block;
-      
-       
-   }
-   .aside{
-       position: static;
-   }
- }
+@media (min-width: 650px) {
+    .aside {
+        width: 100%;
+        position: static;
+        min-height: 80vh;
+        position: sticky;
+
+    }
+
+    .desktop--aside {
+        display: block;
+        width: 25%;
+
+    }
+
+    
+}

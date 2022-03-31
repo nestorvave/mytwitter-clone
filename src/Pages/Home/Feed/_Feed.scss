@@ -1,0 +1,13 @@
+.tweetsFeed{
+    width: 100%
+}
+@media (min-width: 650px) {
+    .tweetsFeed{
+       width: 99%;
+       
+       
+    }
+    .btn-tweet{
+        display: none;
+    }
+}

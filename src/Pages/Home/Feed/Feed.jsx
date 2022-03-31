@@ -32,7 +32,7 @@ const Feed = () => {
 
     
   return (
-    <>
+    <div className='tweetsFeed' >
         {
             uiTweets.map( item => (
                <Tweet 
@@ -49,7 +49,7 @@ const Feed = () => {
             ))
         }
       <Link to="/create" className='btn-tweet'>+</Link>
-    </>
+    </div>
   )
 }
 

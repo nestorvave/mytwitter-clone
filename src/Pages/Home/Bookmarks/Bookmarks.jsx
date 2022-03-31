@@ -13,7 +13,7 @@ const Bookmarks = () => {
   }, [setBookmarks])
 
   return (
-    <>
+    <div className='tweetsFeed' >
     {
         bookmarks.map( item => (
            <Tweet 
@@ -29,7 +29,7 @@ const Bookmarks = () => {
         ))
     }
   
-</>
+</div>
   )
 }
 

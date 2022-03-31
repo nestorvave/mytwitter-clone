@@ -15,13 +15,10 @@ const HomeScreen = () => {
 
 
   return (
-    <main className='mainHomeScreen flex-center' >
+    <main className='mainHomeScreen ' >
       {
         open && <Aside setOpen={setOpen} />
       }
-      <div className="desktop" >
-          <Aside  setOpen={setOpen} />
-      </div>
       <nav className='navHomeScreen ' >
         <img 
           className='navHomeScreen__profilePicture' 
@@ -32,10 +29,16 @@ const HomeScreen = () => {
         <img className='navHomeScreen__logo' src={Logo} alt="logo"  />
         <span className='navHomeScreen__logo' ></span>
       </nav>
-      <div className="desktop" >
-          <NewTweet />
-      </div>
-      <FeedRouter />
+        <div className="desktop--aside" >
+            <Aside  setOpen={setOpen} />
+        </div>
+      <section className='main-content' >
+        <div className="desktop--newtweet" >
+            <NewTweet />
+        </div>
+        <FeedRouter />
+
+      </section>
     
     </main>
   

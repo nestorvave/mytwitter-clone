@@ -1,7 +1,9 @@
 .mainHomeScreen{
-    width: 100%;
-    position: relative;
+    width: 99%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     
     .navHomeScreen{
         width: 100%;
@@ -21,5 +23,21 @@
             height: 40px;
         }
         
+    }
+    .main-content{
+        width: 100%;
+    }
+}
+@media (min-width: 650px) {
+    .mainHomeScreen{
+        display: flex;
+        align-items: normal;
+        justify-content: normal;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .main-content{
+            width: 75%;
+        }
+
     }
 }
