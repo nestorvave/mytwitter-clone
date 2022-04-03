@@ -13,6 +13,11 @@ export const DataProvider = ( {children} ) =>{
         user:""
     })
     const[bookmarks, setBookmarks]=useState([])
+    const [isDeleting, setIsDeleting] =useState({
+        status:false,
+        idTweet:"",
+        idUser:"",
+    })
 
 
     return(
@@ -23,7 +28,9 @@ export const DataProvider = ( {children} ) =>{
                 user,
                 setUser,
                 bookmarks, 
-                setBookmarks
+                setBookmarks,
+                isDeleting,
+                setIsDeleting
             }}
         >
             { children }

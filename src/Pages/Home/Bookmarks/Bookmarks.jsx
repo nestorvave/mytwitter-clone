@@ -13,7 +13,7 @@ const Bookmarks = () => {
   }, [setBookmarks])
 
   return (
-    <div className='tweetsFeed' >
+    <div className='tweetsFeed flex-center' >
     {
         bookmarks.map( item => (
            <Tweet 

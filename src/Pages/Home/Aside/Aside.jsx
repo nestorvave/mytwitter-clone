@@ -2,6 +2,10 @@ import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../../Context/DataProvider";
+import bookmarkssvg from '../../../Images/bookmarks.svg';
+import profile from '../../../Images/profile.svg';
+import home from '../../../Images/home.svg';
+
 
 const Aside = ({ setOpen }) => {
   const { user } = useContext(DataContext);
@@ -24,7 +28,7 @@ const Aside = ({ setOpen }) => {
       <ol className="list flex-center">
         <Link className="list--link" to="/home/feed" onClick={ closeMenu } >
           <img
-            src={profilePhoto}
+            src={home}
             alt="ProfilePicture"
             className="asideInfo__profilePicture"
             onClick={ closeMenu }
@@ -33,7 +37,7 @@ const Aside = ({ setOpen }) => {
         </Link>
         <Link className="list--link" to="/home/bookmarks" onClick={ closeMenu } >
           <img
-            src={profilePhoto}
+            src={bookmarkssvg}
             alt="ProfilePicture"
             className="asideInfo__profilePicture"
             onClick={ closeMenu }
@@ -42,7 +46,7 @@ const Aside = ({ setOpen }) => {
         </Link>
         <Link className="list--link" to="/home/bookmarks" onClick={ closeMenu } >
           <img
-            src={profilePhoto}
+            src={profile}
             alt="ProfilePicture"
             className="asideInfo__profilePicture"
             onClick={ closeMenu }

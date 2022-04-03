@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Like from '../../../Images/like.svg'
 import Unlike from '../../../Images/unlike.svg'
+import Trash from '../../../Images/trash.svg'
 import { db } from '../../../Firebase/firebase'
 import { useContext } from 'react'
 import { DataContext } from '../../../Context/DataProvider'
@@ -13,7 +14,9 @@ const Tweet = ({
     id,
     uid
 }) => {
-    const {uiTweets ,bookmarks, setBookmarks, user}=useContext( DataContext )
+    const {uiTweets ,bookmarks, setBookmarks, user, isDeleting ,setIsDeleting}=useContext( DataContext )
+    
+    
 
     //Setting in the localStorage bookmarks state
     useEffect(() => {
@@ -63,9 +66,17 @@ const Tweet = ({
             console.log(user.uid,idUser)
 
         }
-
-
     }
+
+    function handleDeleteTweet(idTweet,idUser){
+        setIsDeleting({
+            ...isDeleting,
+            status:true,
+            idTweet,
+            idUser,
+        })
+    }
+
 
 
 
@@ -83,10 +94,9 @@ const Tweet = ({
         <section className='action' >
             <div 
                 className='action__svg' 
-                onClick={ () => deleteCurrentTweet(id,uid) }
+                onClick={ () => handleDeleteTweet(id,uid) }
             >
-                <img src={Unlike} alt="unlike"  />
-                <p>2</p>
+                <img src={Trash} alt="unlike"  />
             </div>
             <div 
                 className='action__svg' 

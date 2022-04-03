@@ -32,7 +32,7 @@ const Feed = () => {
 
     
   return (
-    <div className='tweetsFeed' >
+    <div className='tweetsFeed flex-center' >
         {
             uiTweets.map( item => (
                <Tweet 

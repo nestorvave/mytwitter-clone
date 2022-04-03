@@ -5,19 +5,52 @@ import FeedRouter from '../../../Routers/FeedRouter';
 import { DataContext } from '../../../Context/DataProvider'
 import Aside from '../Aside/Aside';
 import NewTweet from '../NewTweet/NewTweet';
+import Message from '../../../Components/Message/Message';
+import sadFace from '../../../Images/sadFace.svg'
+import {db} from '../../../Firebase/firebase'
 
 const HomeScreen = () => {
 
-  const { user } = useContext( DataContext )
+  const { user, isDeleting, setIsDeleting } = useContext( DataContext )
   const { profilePhoto } = user
   const [ open, setOpen ]=useState(false)
-  
 
+  const {idTweet,idUser}= isDeleting;
+
+
+  function handleDeleteOfDb(idTweet,idUser) {
+    if(user.uid===idUser){
+        db.doc(`tweets/${idTweet}`).delete()
+        console.log("tweet borrado")
+        console.log(user.uid,idUser)
+        setIsDeleting({
+          status:false,
+          idTweet:"",
+          idUser:"",
+        })
+
+    }else{
+        console.log("tweet no borrado")
+        console.log(user.uid,idUser)
+
+    }
+}
+  
 
   return (
     <main className='mainHomeScreen ' >
       {
         open && <Aside setOpen={setOpen} />
+      }
+      {
+        isDeleting.status && 
+                  <Message 
+                    image={sadFace}
+                    p={"Do you want to delete this tweet"}
+                    cancel={ ()=> setIsDeleting(false) }
+                    confirm={ ()=> handleDeleteOfDb(idTweet,idUser)  }
+
+                  />
       }
       <nav className='navHomeScreen ' >
         <img 

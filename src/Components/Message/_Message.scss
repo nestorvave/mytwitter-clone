@@ -1,0 +1,100 @@
+.message {
+    border: 6px solid #2E324A;
+    border-top: 25px solid #2E324A;
+    position: absolute;
+    width: 250px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #2E324A;
+    z-index: 5;
+    top: 35vh;
+    position: fixed;
+    border-radius: 12px;
+
+    .title {
+        position: absolute;
+        top: -23px;
+        left: 5px;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    span {
+        width: 15px;
+        border: 15px;
+        height: 15px;
+        box-shadow: 0 0 3px black inset ;
+        border-radius: 8px;
+        position: absolute;
+        top: -19px;
+        
+    }
+    .orange{
+        right: 30px;
+        background-color: orange;
+    }
+    .green{
+        right: 50px;
+        background-color: green;
+    }
+    .red{
+        right: 10px;
+        background-color: red;
+    }
+    .warning{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: space-around;
+       
+
+        .msg{
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+            .msg__btns{
+                width: 80%;
+                display: flex;
+                justify-content: space-between;
+                button{
+                    width: 55px;
+                    border-radius: 5px;
+                    padding: 4px;
+                }
+            }
+
+            h1{
+                font-size: 15px;
+                text-align: center;
+            }
+            p{
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        img{
+            width: 35%;
+            height: 90%;
+            margin-top: 2px;
+           
+        }
+    }
+
+
+}
+
+@media (min-width: 650px) {
+    .message{
+        top:35vh;
+        left: 40vw;    
+    }
+
+}

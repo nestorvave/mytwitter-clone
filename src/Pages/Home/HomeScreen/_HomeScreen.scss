@@ -35,6 +35,9 @@
         justify-content: normal;
         flex-direction: row;
         flex-wrap: wrap;
+         .navHomeScreen{
+             display: none;
+         }
         .main-content{
             width: 75%;
         }
