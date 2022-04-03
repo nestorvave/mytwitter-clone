@@ -18,7 +18,8 @@ const NewTweet = () => {
          const newTweetByUser={
              ...user,
              tweet:newTweet,
-             likes:0
+             likes:0,
+             date: new Date().getTime()
          }
          console.log(newTweetByUser)
          setValues({newTweet:""})

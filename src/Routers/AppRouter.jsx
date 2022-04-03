@@ -74,8 +74,7 @@ const AppRouter = () => {
             component={ NewTweet }
           />
 
-
-           <Redirect to={(status && loading===false )  ? '/home/feed':'/auth/register'}/>
+          <Redirect to={(status && loading===false )  ? '/home/feed':'/auth/login'}/>
         </Switch>
       </div>
     </Router>

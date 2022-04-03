@@ -9,7 +9,6 @@ const AuthRouter = () => {
     <main className="authScreen" >
         <Switch>
             <Route 
-                exact
                 path="/auth/login"
                 component={ LoginScreen }
             />

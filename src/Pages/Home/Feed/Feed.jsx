@@ -44,6 +44,7 @@ const Feed = () => {
                   likes={ item.likes }
                   profilePhoto={ item.profilePhoto }
                   uid={ item.uid }
+                  date= { item.date } 
                
                /> 
             ))

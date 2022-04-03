@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import Like from '../../../Images/like.svg'
-import Unlike from '../../../Images/unlike.svg'
 import Trash from '../../../Images/trash.svg'
 import { db } from '../../../Firebase/firebase'
 import { useContext } from 'react'
 import { DataContext } from '../../../Context/DataProvider'
+import moment from 'moment'
 
 const Tweet = ({
     tweet,
@@ -12,11 +12,13 @@ const Tweet = ({
     likes,
     profilePhoto,
     id,
-    uid
+    uid,
+    date
 }) => {
     const {uiTweets ,bookmarks, setBookmarks, user, isDeleting ,setIsDeleting}=useContext( DataContext )
     
-    
+    const dateTweet=moment(date)
+  
 
     //Setting in the localStorage bookmarks state
     useEffect(() => {
@@ -55,18 +57,6 @@ const Tweet = ({
     }
     
 
-    function deleteCurrentTweet(idTweet,idUser) {
-        if(user.uid===idUser){
-            db.doc(`tweets/${idTweet}`).delete()
-            console.log("tweet borrado")
-            console.log(user.uid,idUser)
-
-        }else{
-            console.log("tweet no borrado")
-            console.log(user.uid,idUser)
-
-        }
-    }
 
     function handleDeleteTweet(idTweet,idUser){
         setIsDeleting({
@@ -86,7 +76,7 @@ const Tweet = ({
             <img className='tweet__image--userPP' src={ profilePhoto } alt="profile"  />
         </aside>
         <section className='about' >
-            <p className='about__profile' >@{userTwitter}</p>
+            <p className='about__profile' >@{userTwitter}  <span>{ dateTweet.format("d/DD/YY") }</span> </p>
             <p className='about__story' >
                 {tweet}
             </p>

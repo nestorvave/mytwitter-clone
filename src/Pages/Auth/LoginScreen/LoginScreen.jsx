@@ -72,7 +72,7 @@ const LoginScreen = () => {
         </p>
       </div>
       <Link to="/auth/register" className='mainAuthScreen__link' >
-        Already registered?
+        Don´t have an account yet? <span className='mainAuthScreen__link--color' >Sign up</span>
       </Link>
       
     </section>
