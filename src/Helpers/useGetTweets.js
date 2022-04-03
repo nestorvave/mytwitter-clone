@@ -22,7 +22,7 @@ const useGetTweets = () => {
                         date:element.data().date,
                         id:element.id
                     }
-                    tweets.push( uiInfo)
+                    tweets.unshift( uiInfo)
 
 
                 });
