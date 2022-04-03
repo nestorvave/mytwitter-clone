@@ -19,8 +19,7 @@ import { DataContext  } from '../Context/DataProvider';
 const AppRouter = () => {
 
   const [loading, setLoading] = useState( true )
-  const [status, setStatus] = useState( false )
-  const { user, setUser } = useContext( DataContext)
+  const { user, setUser, status, setStatus } = useContext( DataContext)
  
 
   useEffect(()=>{

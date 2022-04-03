@@ -5,14 +5,25 @@ import { DataContext } from "../../../Context/DataProvider";
 import bookmarkssvg from '../../../Images/bookmarks.svg';
 import profile from '../../../Images/profile.svg';
 import home from '../../../Images/home.svg';
+import exit from '../../../Images/exit.svg';
+
+import  firebase from '../../../Firebase/firebase'
 
 
 const Aside = ({ setOpen }) => {
-  const { user } = useContext(DataContext);
+  const { user, setStatus } = useContext(DataContext);
   const { profilePhoto } = user;
+
   function closeMenu(){
     setOpen(false)
   }
+  
+  
+  function handleLogOut() {
+      firebase.auth().signOut()
+      setStatus(null)
+  }
+  
 
   return (
     <aside className="aside ">
@@ -54,7 +65,13 @@ const Aside = ({ setOpen }) => {
           User
         </Link>
       </ol>
-      <div>
+      <div  className="asideLogout" >
+        <img
+          src={exit}
+          alt="ProfilePicture"
+          className="asideLogout__img"
+          onClick={ handleLogOut }
+        />
         <p>LogOut</p>
       </div>
     </aside>
