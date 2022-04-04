@@ -59,9 +59,7 @@ const HomeScreen = () => {
             <Aside  setOpen={setOpen} />
         </div>
       <section className='main-content' >
-        <div className="desktop--newtweet" >
-            <NewTweet />
-        </div>
+
         <FeedRouter />
 
       </section>

@@ -5,6 +5,10 @@
 @media (min-width: 650px) {
     .tweetsFeed{
        width: 99%;
+       min-height: 100vh;
+       h2{
+           padding-bottom: 10px 0 10px 0;
+       }
        
        
        

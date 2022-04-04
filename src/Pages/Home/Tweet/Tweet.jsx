@@ -39,6 +39,7 @@ const Tweet = ({
         if (bookmarks.length===0) {
             db.doc(`tweets/${docId}`).update({likes:like+1})
             arrayFiltered = uiTweets.filter(item => item.id === docId)
+            arrayFiltered[0]={...arrayFiltered[0],likes:like+1}
             setBookmarks([...bookmarks,arrayFiltered[0]])
            
         } else if (bookmarks.length>0) {

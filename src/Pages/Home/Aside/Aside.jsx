@@ -55,14 +55,14 @@ const Aside = ({ setOpen }) => {
           />
           BookMarks
         </Link>
-        <Link className="list--link" to="/home/bookmarks" onClick={ closeMenu } >
+        <Link className="list--link" to="/home/profile" onClick={ closeMenu } >
           <img
             src={profile}
             alt="ProfilePicture"
             className="asideInfo__profilePicture"
             onClick={ closeMenu }
           />
-          User
+          Profile
         </Link>
       </ol>
       <div  className="asideLogout" onClick={ handleLogOut } >

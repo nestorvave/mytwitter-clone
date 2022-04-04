@@ -26,6 +26,7 @@ const AppRouter = () => {
     firebase.auth().onAuthStateChanged( userStatus =>{
 
       if ( userStatus!== null ){
+        console.log( userStatus )
         setStatus(true)
         setUser({
           ...user,
