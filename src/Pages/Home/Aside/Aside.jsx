@@ -65,12 +65,12 @@ const Aside = ({ setOpen }) => {
           User
         </Link>
       </ol>
-      <div  className="asideLogout" >
+      <div  className="asideLogout" onClick={ handleLogOut } >
         <img
           src={exit}
           alt="ProfilePicture"
           className="asideLogout__img"
-          onClick={ handleLogOut }
+          
         />
         <p>LogOut</p>
       </div>

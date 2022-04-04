@@ -53,13 +53,20 @@
         }
 
     }
-    .asideLogout{
+
+    .asideLogout {
         width: 60%;
         display: flex;
         align-items: center;
         justify-content: space-around;
+        cursor: pointer;
 
-        .asideLogout__img{
+        &:hover {
+            border-bottom: 1px solid $borderA;
+
+        }
+
+        .asideLogout__img {
             width: 30px;
         }
     }
@@ -86,5 +93,5 @@
 
     }
 
-    
+
 }

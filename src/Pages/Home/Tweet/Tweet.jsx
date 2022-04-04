@@ -15,9 +15,9 @@ const Tweet = ({
     uid,
     date
 }) => {
-    const {uiTweets ,bookmarks, setBookmarks, user, isDeleting ,setIsDeleting}=useContext( DataContext )
-    
+    const {uiTweets ,bookmarks, setBookmarks, isDeleting ,setIsDeleting}=useContext( DataContext )
     const dateTweet=moment(date)
+
   
 
     //Setting in the localStorage bookmarks state
@@ -76,7 +76,7 @@ const Tweet = ({
             <img className='tweet__image--userPP' src={ profilePhoto } alt="profile"  />
         </aside>
         <section className='about' >
-            <p className='about__profile' >@{userTwitter}  <span>{ dateTweet.format("d/DD/YY") }</span> </p>
+            <p className='about__profile' >@{userTwitter}  <span>{ dateTweet.format("L") }</span> </p>
             <p className='about__story' >
                 {tweet}
             </p>
