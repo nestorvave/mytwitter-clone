@@ -21,18 +21,11 @@ const HomeScreen = () => {
   function handleDeleteOfDb(idTweet,idUser) {
     if(user.uid===idUser){
         db.doc(`tweets/${idTweet}`).delete()
-        console.log("tweet borrado")
-        console.log(user.uid,idUser)
         setIsDeleting({
           status:false,
           idTweet:"",
           idUser:"",
         })
-
-    }else{
-        console.log("tweet no borrado")
-        console.log(user.uid,idUser)
-
     }
 }
   

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { db } from "../Firebase/firebase"
 
 
-const useGetTweets = () => {
+const useGetTweets = (setLoading) => {
     const [gettingTweets, setGettingTweets] = useState([])
 
     useEffect(()=>{
@@ -23,6 +23,7 @@ const useGetTweets = () => {
                         id:element.id
                     }
                     tweets.unshift( uiInfo)
+                    setLoading(false)
 
 
                 });

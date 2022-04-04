@@ -6,8 +6,9 @@ export const DataContext = createContext()
 
 export const DataProvider = ( {children} ) =>{
 
-    const [uiTweets, setUiTweets] =useState([])
     const [status, setStatus] = useState( false )
+    const [loading, setLoading] = useState( true )
+    const [uiTweets, setUiTweets] =useState([])
     const[bookmarks, setBookmarks]=useState([])
     const [user, setUser]= useState({
     uid:"",
@@ -33,7 +34,9 @@ export const DataProvider = ( {children} ) =>{
                 isDeleting,
                 setIsDeleting,
                 status, 
-                setStatus
+                setStatus,
+                loading, 
+                setLoading
             }}
         >
             { children }

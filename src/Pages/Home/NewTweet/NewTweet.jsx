@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 
 
 const NewTweet = () => {
-    const { uiTweets, setUiTweets,user } = useContext( DataContext )
+    const { uiTweets, setUiTweets,user,setLoading } = useContext( DataContext )
     const[values,handleForm,setValues]=useForm({newTweet:""})
     const {newTweet}= values
     const history = useHistory()
@@ -21,10 +21,10 @@ const NewTweet = () => {
              likes:0,
              date: new Date().getTime()
          }
-         console.log(newTweetByUser)
          setValues({newTweet:""})
          useUpdateDb(uiTweets, setUiTweets, newTweetByUser)
          history.push("home/feed")
+         setLoading(true)
 
     
     }
