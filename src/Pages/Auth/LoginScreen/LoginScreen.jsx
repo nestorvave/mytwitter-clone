@@ -15,6 +15,10 @@ import loginWithGoogleServices from "../../../Helpers/loginWithGoogleServices";
  * Svg
  */
 import Logo from "../../../Images/logo.svg";
+/**
+ * libraries
+ */
+ import 'animate.css';
 
 const LoginScreen = () => {
   const [value, handleInputChange] = useForm({
@@ -34,7 +38,7 @@ const LoginScreen = () => {
   }
 
   return (
-    <section className="mainAuthScreen flex-center">
+    <section className="mainAuthScreen flex-center animate__animated animate__fadeIn">
       <img src={Logo} alt="logo" className="mainAuthScreen__logo" />
       <h2 className="mainAuthScreen__title">
         See what´s happening in the world right now.

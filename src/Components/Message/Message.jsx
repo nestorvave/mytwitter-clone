@@ -3,6 +3,11 @@
  */
 import React from "react";
 
+/**
+ * libraries
+ */
+ import 'animate.css';
+
 
 const Message = ({
   header = "",
@@ -14,7 +19,7 @@ const Message = ({
 }) => {
 
   return (
-    <section className="message ">
+    <section className="message animate__animated animate__zoomIn">
       <p className="title">{header}</p>
       <span className="green"></span>
       <span className="orange"></span>

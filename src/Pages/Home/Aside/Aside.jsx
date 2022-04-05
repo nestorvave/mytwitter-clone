@@ -20,6 +20,10 @@ import profile from "../../../Images/profile.svg";
 import home from "../../../Images/home.svg";
 import exit from "../../../Images/exit.svg";
 
+/**
+ * libraries
+ */
+import 'animate.css';
 
 const Aside = ({ setOpen }) => {
   const { user, setStatus } = useContext(DataContext);
@@ -35,7 +39,7 @@ const Aside = ({ setOpen }) => {
   }
 
   return (
-    <aside className="aside ">
+    <aside className="aside animate__animated animate__slideInLeft ">
       <section className="asideInfo">
         <img
           src={profilePhoto}

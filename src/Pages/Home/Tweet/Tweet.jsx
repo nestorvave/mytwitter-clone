@@ -23,6 +23,8 @@ import Trash from "../../../Images/trash.svg";
  * Libraries
  */
 import moment from "moment";
+import 'animate.css';
+
 
 const Tweet = ({ tweet, userTwitter, likes, profilePhoto, id, uid, date }) => {
 
@@ -76,7 +78,7 @@ const Tweet = ({ tweet, userTwitter, likes, profilePhoto, id, uid, date }) => {
   }
 
   return (
-    <main className="tweet">
+    <main className="tweet animate__animated animate__fadeIn">
       <aside className="tweet__image">
         <img
           className="tweet__image--userPP"
@@ -86,7 +88,7 @@ const Tweet = ({ tweet, userTwitter, likes, profilePhoto, id, uid, date }) => {
       </aside>
       <section className="about">
         <p className="about__profile">
-          @{userTwitter} <span className="dateFormat">{dateTweet.format("L")}</span>
+          @{userTwitter} <span className="dateFormat">{dateTweet.format("DD/MM/YY")}</span>
         </p>
         <p className="about__story">{tweet}</p>
       </section>

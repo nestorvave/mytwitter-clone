@@ -6,12 +6,15 @@
     flex-direction: column;
     
     .navHomeScreen{
-        width: 100%;
+        width: 95%;
         height: 50px;
         border-bottom: 1px solid $borderA;
         display: flex;
         justify-content: space-between;
         padding: 10px 0 2px 0;
+        position: sticky;
+        top: 0;
+        background-color: white;
 
         .navHomeScreen__profilePicture{
             width: 40px;

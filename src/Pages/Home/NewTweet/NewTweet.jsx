@@ -14,6 +14,11 @@ import { useHistory } from "react-router-dom";
 import useUpdateDb from "../../../Helpers/useUpdateDb";
 import { DataContext } from "../../../Context/DataProvider";
 import useForm from "../../../Hooks/useForm";
+/**
+ * libraries
+ */
+ import 'animate.css';
+
 
 const NewTweet = () => {
   const { user, setLoading } = useContext(DataContext);
@@ -40,7 +45,7 @@ const NewTweet = () => {
   }
 
   return (
-    <main className="tweet-section flex-center">
+    <main className="tweet-section flex-center animate__animated animate__fadeIn">
       <nav className="tweet-nav">
         <button
           className="tweet-nav__button tweet-nav__button--cancel"

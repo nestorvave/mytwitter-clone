@@ -12,6 +12,10 @@ import registerEmailPassword from "../../../Helpers/registerEmailPassword";
  */
 import useForm from "../../../Hooks/useForm";
 import Logo from "../../../Images/logo.svg";
+/**
+ * libraries
+ */
+import 'animate.css';
 
 const RegisterScreen = () => {
   const [value, handleInputChange] = useForm({
@@ -26,7 +30,7 @@ const RegisterScreen = () => {
   }
 
   return (
-    <section className="mainAuthScreen flex-center">
+    <section className="mainAuthScreen flex-center animate__animated animate__fadeIn">
       <img src={Logo} alt="logo" className="mainAuthScreen__logo" />
       <h2 className="mainAuthScreen__title">Join Twitter today</h2>
 
