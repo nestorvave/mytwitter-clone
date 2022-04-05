@@ -1,5 +1,8 @@
-import { useState } from "react";
-import { createContext } from "react";
+/**
+ * Dependencies
+ */
+import { useState, createContext } from "react";
+
 
 export const DataContext = createContext()
 

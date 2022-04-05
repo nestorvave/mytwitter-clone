@@ -1,4 +1,12 @@
-import { useState } from "react"
+/**
+ * Dependencies
+ */
+ import { useState } from "react"
+
+ /**
+  * @description Hook for handle a data of an input
+  * @returns {string,function,setInput} – input,handleInput,setInput
+  */
 
 const useForm = (initialState={}) => {
 

@@ -1,6 +1,11 @@
+/**
+ * Dependencies
+ */
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-
+/**
+ * Components
+ */
 import LoginScreen from "../Pages/Auth/LoginScreen/LoginScreen";
 import RegisterScreen from "../Pages/Auth/RegisterScreen/RegisterScreen";
 
@@ -16,8 +21,6 @@ const AuthRouter = () => {
                 path="/auth/register"
                 component={ RegisterScreen }
             />
-
-
             <Redirect to="/auth/login" />
         </Switch>
     </main>

@@ -1,5 +1,11 @@
+/**
+ * Dependencies
+ */
 import React from 'react'
 import { Switch, Route, Redirect } from "react-router-dom";
+/**
+ * Components
+ */
 import Bookmarks from '../Pages/Home/Bookmarks/Bookmarks';
 import Feed from '../Pages/Home/Feed/Feed';
 import Profile from '../Pages/Home/Profile/Profile';

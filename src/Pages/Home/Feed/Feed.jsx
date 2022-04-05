@@ -1,13 +1,26 @@
-import React from "react";
-import Tweet from "../Tweet/Tweet";
+/**
+ * Dependencies
+ */
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+/**
+ * Components
+ */
+import NewTweet from "../NewTweet/NewTweet";
+import Tweet from "../Tweet/Tweet";
+
+/**
+ * Helpers
+ */
 import useGetTweets from "../../../Helpers/useGetTweets";
-import { useContext } from "react";
 import { DataContext } from "../../../Context/DataProvider";
-import { useEffect } from "react";
+
+/**
+ * Libraries
+ */
 import RingLoader from "react-spinners/RingLoader";
 import { css } from "@emotion/react";
-import NewTweet from "../NewTweet/NewTweet";
 
 //Handle LocalStorage
 export function getStorageValue(defaultValue = []) {
@@ -49,7 +62,7 @@ const Feed = () => {
           loading ? (
             <RingLoader color="#82C35F" size={150} css={override} />
           ) : (
-            uiTweets.map((item) => (
+            uiTweets.map( item => (
               <Tweet
                 key={item.id}
                 id={item.id}

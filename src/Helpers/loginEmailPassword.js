@@ -1,9 +1,13 @@
+/**
+ * Firebase
+ */
+
 import firebase from '../Firebase/firebase'
 
 
 /**
  *
- *
+ * @description "fn for login through  Email and password "
  * @param {*email typed on LoginScreen by user } email
  * @param {*password typed on LoginScreen by user} password
  */

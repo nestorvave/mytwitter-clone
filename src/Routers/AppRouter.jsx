@@ -1,18 +1,46 @@
-import React from 'react'
-import { useEffect, useContext } from 'react';
+/**
+ * Dependencies
+ */
+import React, { useEffect, useContext, useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect
 } from "react-router-dom";
+
+/**
+ * Components
+ */
 import HomeScreen from '../Pages/Home/HomeScreen/HomeScreen';
 import NewTweet from '../Pages/Home/NewTweet/NewTweet';
 import AuthRouter from './AuthRouter';
+
+/**
+ * Firebase
+ */
 import firebase from '../Firebase/firebase'
-import { useState } from 'react';
+
+/**
+ * Helpers
+ */
 import { DataContext  } from '../Context/DataProvider';
 
+
+/**
+ * Libraries
+ */
+import GridLoader from "react-spinners/GridLoader";
+import { css } from "@emotion/react";
+
+//styles of Spinner
+const override = css`
+  display: block;
+  margin: 0 auto;
+  position:absolute;
+  top:35%;
+  left:33%;
+`;
 
 
 
@@ -24,30 +52,27 @@ const AppRouter = () => {
 
   useEffect(()=>{
     firebase.auth().onAuthStateChanged( userStatus =>{
-
       if ( userStatus!== null ){
-        console.log( userStatus )
-        setStatus(true)
+        setLoading(false)
         setUser({
           ...user,
           uid:userStatus.uid,
           email:userStatus.email,
           user:userStatus.displayName,
           profilePhoto:userStatus.photoURL
-
+          
         })
-        
-
+        setStatus(true)
       }
+      setLoading(false)
 
     })
-    setLoading(false)
     
   },[setStatus, setLoading])
 
   if(loading){
     return(
-      <h1>Wait...</h1>
+      <GridLoader color="#82C35F" size={60} css={override} />
     )
   }
 

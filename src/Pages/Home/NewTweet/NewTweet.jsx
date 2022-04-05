@@ -1,73 +1,78 @@
-import React from 'react'
-import useUpdateDb from '../../../Helpers/useUpdateDb'
-import { useContext } from 'react'
-import { DataContext } from '../../../Context/DataProvider'
-import useForm from '../../../Hooks/useForm'
+/**
+ * Dependencies
+ */
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
+/**
+ * Firebase
+ */
+
+/**
+ * Helpers
+ */
+import useUpdateDb from "../../../Helpers/useUpdateDb";
+import { DataContext } from "../../../Context/DataProvider";
+import useForm from "../../../Hooks/useForm";
 
 const NewTweet = () => {
-    const { uiTweets, setUiTweets,user,setLoading } = useContext( DataContext )
-    const[values,handleForm,setValues]=useForm({newTweet:""})
-    const {newTweet}= values
-    const history = useHistory()
+  const { user, setLoading } = useContext(DataContext);
+  const [values, handleForm, setValues] = useForm({ newTweet: "" });
+  const { newTweet } = values;
+  const history = useHistory();
 
+  function AddingTweet(e) {
+    e.preventDefault();
+    const newTweetByUser = {
+      ...user,
+      tweet: newTweet,
+      likes: 0,
+      date: new Date().getTime(),
+    };
+    useUpdateDb(newTweetByUser);
+    history.push("home/feed");
+    setValues({ newTweet: "" });
+    setLoading(true);
+  }
 
-     function AddingTweet(e) {
-         e.preventDefault()
-         const newTweetByUser={
-             ...user,
-             tweet:newTweet,
-             likes:0,
-             date: new Date().getTime()
-         }
-         setValues({newTweet:""})
-         useUpdateDb(uiTweets, setUiTweets, newTweetByUser)
-         history.push("home/feed")
-         setLoading(true)
-
-    
-    }
-
-    function cancelTweet() {
-        history.push("home/feed")
-    }
-
+  function cancelTweet() {
+    history.push("home/feed");
+  }
 
   return (
-    <main className='tweet-section flex-center' >
-        <nav className='tweet-nav' >
-            <button 
-                className='tweet-nav__button tweet-nav__button--cancel'
-                onClick={ cancelTweet }
-            >
-                Cancel
-            </button>
-             <button 
-                className='tweet-nav__button button--primary'
-                onClick={ AddingTweet }
-             >
-                Tweet
-            </button>
-        </nav>
-        <section className='text-area-section '>
-            <div className='profile' >
-                <img src={user.profilePhoto} alt=""  />
-            </div>
-            <textarea 
-                name='newTweet'
-                value={newTweet}
-                onChange={handleForm}
-                className='text-area-section__info' 
-                autoFocus 
-                placeholder='What´s happening?' 
-                id="" 
-                cols="30" 
-                rows="10"
-                ></textarea>
-        </section>
+    <main className="tweet-section flex-center">
+      <nav className="tweet-nav">
+        <button
+          className="tweet-nav__button tweet-nav__button--cancel"
+          onClick={cancelTweet}
+        >
+          Cancel
+        </button>
+        <button
+          className="tweet-nav__button button--primary"
+          onClick={AddingTweet}
+        >
+          Tweet
+        </button>
+      </nav>
+      <section className="text-area-section ">
+        <div className="profile">
+          <img src={user.profilePhoto} alt="" />
+        </div>
+        <textarea
+          name="newTweet"
+          value={newTweet}
+          onChange={handleForm}
+          className="text-area-section__info"
+          autoFocus
+          placeholder="What´s happening?"
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+      </section>
     </main>
-  )
-}
+  );
+};
 
-export default NewTweet
+export default NewTweet;

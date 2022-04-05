@@ -1,6 +1,17 @@
+/**
+ * Firebase
+ */
 import { db } from "../Firebase/firebase";
 
-const useUpdateDb = (uiTweets, setUiTweets, newTweetByUser) => {
+
+/**
+ *
+ * @description "fn for add new tweet to firestore db "
+ * @param {*New tweet created with requires information} newTweetByUser
+ * 
+ */
+
+const useUpdateDb = ( newTweetByUser) => {
   // Adding a new document with a generated id.
   const sendTweet = db.collection("tweets").add(newTweetByUser);
   sendTweet
@@ -24,7 +35,7 @@ const useUpdateDb = (uiTweets, setUiTweets, newTweetByUser) => {
 
   // })
 
-  return uiTweets;
+
 };
 
 export default useUpdateDb;

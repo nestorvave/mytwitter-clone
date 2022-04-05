@@ -1,5 +1,11 @@
-import React from "react";
-import { useContext } from "react";
+/**
+ * Dependencies
+ */
+import React, { useContext } from "react";
+
+/**
+ * Helpers
+ */
 import { DataContext } from "../../../Context/DataProvider";
 
 const Profile = () => {

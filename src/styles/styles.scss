@@ -1,12 +1,9 @@
-
+//General
 @import './base/settings';
 @import './base/base';
 
-
+//Componentes
 @import './components/buttons';
-
-
-
 @import '../Pages/Auth/AuthScreen';
 @import "../Pages/Home/HomeScreen/HomeScreen";
 @import "../Pages/Home/Tweet/Tweet";
