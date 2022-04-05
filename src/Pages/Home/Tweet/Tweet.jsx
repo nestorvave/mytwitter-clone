@@ -86,7 +86,7 @@ const Tweet = ({ tweet, userTwitter, likes, profilePhoto, id, uid, date }) => {
       </aside>
       <section className="about">
         <p className="about__profile">
-          @{userTwitter} <span>{dateTweet.format("L")}</span>
+          @{userTwitter} <span className="dateFormat">{dateTweet.format("L")}</span>
         </p>
         <p className="about__story">{tweet}</p>
       </section>
